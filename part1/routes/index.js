@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/api/dogs', function(req, res, next) {
   //Connect to the database
-  req.pool.getConnection( function(err,connection) {
+  req.pool.getConnection(function(err,connection) {
     if (err) {
       res.sendStatus(500);
       return;
