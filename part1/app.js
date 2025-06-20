@@ -25,7 +25,18 @@ let db;
       database: 'DogWalkService'
     });
 
-
+    // Insert data if table is empty
+    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
+    if (rows[0].count === 0) {
+      await db.execute(`
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
+        (1, 2, 3, 3, 'My dog is tired after the walk.'),
+        (2, 4, 3, 1, 'My dog is very aggressive, what did you do?'),
+        (3, 2, 5, 5, 'My dog is very happy.'),
+        (4, 4, 1, 4, 'My dog likes you.'),
+        (5, 2, 1, 2, 'My dog gets sad when people walk too fast, slow down.')
+      `);
+    }
 
     // Insert data if table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
