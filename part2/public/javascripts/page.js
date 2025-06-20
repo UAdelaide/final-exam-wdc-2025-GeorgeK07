@@ -174,7 +174,7 @@ function downvote(index) {
 }
 
 /*
- * POST the username and password inserted
+ * POST the username and password inserted to /api/users/users/login
  */
 function login(){
 
