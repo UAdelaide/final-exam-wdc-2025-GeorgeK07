@@ -1,24 +1,6 @@
 var posts = [];
 var search = null;
 
-function colorChange() {
-  // Create an AJAX request
-  let xhttp = new XMLHttpRequest();
-  // Define function that runs when ready state is changed
-  xhttp.onreadystatechange = function() {
-    // Run code if ready state is 4 and status is 200
-    if (this.readyState == 4 && this.status == 200) {
-      // Replace header level 1 text with color requested from /color.txt
-      document.getElementsByTagName("h1")[0].innerText = xhttp.responseText;
-      document.getElementsByTagName("h1")[0].style.color = xhttp.responseText;
-    }
-  };
-  // Open connection to /color.txt with an asynchronous GET request
-  xhttp.open("GET", "/color.txt", true);
-  // Send request to /color.txt
-  xhttp.send();
-}
-
 /*
  * Hides the main part of the page to show the Ask a Question section
  */
