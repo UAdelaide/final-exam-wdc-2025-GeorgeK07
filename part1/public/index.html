@@ -50,9 +50,9 @@
                     this.fetchDog();
                 },
                 methods: {
-                    // Fetch products from DummyJSON
+                    // Fetch dog using Dog API
                     async fetchDog() {
-                        // Fetch product using some url to DummyJSON and store resulting JSON in res var
+                        // Fetch dog using some url to Dog API and store resulting JSON in res var
                         const res = await fetch("https://dog.ceo/api/breeds/image/random");
                         // Change JSON into JavaScript object and store in data var
                         const data = await res.json();
