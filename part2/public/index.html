@@ -41,9 +41,10 @@
           xhttp.onreadystatechange = function() {
               // Run code if ready state is 4 and status is 200
               if (this.readyState === 4 && this.status === 200) {
-                  // Replace header level 1 text with color requested from /color.txt
-                  this.username_vmodel = "HEUHISDUSD";
-                  console.log("Username found!");
+                // Replace header level 1 text with color requested from /color.txt
+                if (this.username_vmodel = "HEUHISDUSD") {
+                console.log("Username found!");
+                }
               }
           };
           // Open connection to /color.txt with an asynchronous GET request
