@@ -59,8 +59,8 @@ router.post('/login', async (req, res) => {
 router.post('/users/login', async (req, res) => {
   try {
     // Get the user
-    let users = req.body;
-    const [rows] = await db.query('SELECT user_id, username, email, role FROM ?', [users.]);
+    let user = req.body;
+    const [rows] = await db.query('SELECT user_id, username, email, role FROM ?', [user.user]);
     res.json(rows);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
