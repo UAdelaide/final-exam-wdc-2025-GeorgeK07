@@ -10,8 +10,8 @@ var usersRouter = require('./routes/users');
 var mysql = require('mysql');
 // create a 'pool' (group) of connections to be used for connecting with our SQL server
 var dbConnectionPool = mysql.createPool({
-host: 'localhost',
-database: 'blog'
+  host: 'localhost',
+  database: 'blog'
 });
 var app = express();
 // Middleware for accessing database: We need access to the database to be available *before* we process routes in index.js,
