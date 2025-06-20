@@ -34,7 +34,7 @@ router.get('/api/walkrequests/open', function(req, res, next) {
       res.sendStatus(500);
       return;
     }
-    var query = "SELECT name,size,username FROM Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id";
+    var query = "SELECT request_id,name,requested_time,duration_minutes,location,username FROM ((Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id) INNER JOIN WalkRequests ON Dogs.dog_id = WalkRequests.dog_id) WHERE WalkRequests.status = 'open'";
     connection.query(query, function(err, rows, fields) {
       connection.release(); // release connection
       if (err) {
