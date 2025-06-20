@@ -197,7 +197,7 @@ function login(){
     // We will cover POST requests in more detail in week 8
     xmlhttp.open("POST", "/users/login", true);
     xmlhttp.setRequestHeader("Content-type", "application/json");
-    xmlhttp.send(JSON.stringify(user));
+    xmlhttp.send(JSON.stringify(user)); // Send user object
 
 }
 
