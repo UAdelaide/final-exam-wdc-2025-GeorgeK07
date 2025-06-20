@@ -31,25 +31,25 @@
           password_vmodel: ''
         };
       },
-                created() {
-                    // When website is loaded, run the fetchProducts function
-                    this.fetchProducts();
-                },
-                methods: {
-                    // Fetch products from DummyJSON
-                    async fetchProducts() {
-                        // Fetch product using some url to DummyJSON and store resulting JSON in res var
-                        const res = await fetch("https://dummyjson.com/products/category/womens-dresses?limit=5");
-                        // Change JSON into JavaScript object and store in data var
-                        const data = await res.json();
-                        // Set newitem var to products array in data
-                        this.newItem = data.products;
-                        // Same but for other
-                        const res2 = await fetch("https://dummyjson.com/products/category/mens-shirts?limit=5");
-                        const data2 = await res2.json();
-                        this.saleItem = data2.products;
-                    }
-                },
+      created() {
+        // When website is loaded, run the fetchProducts function
+        this.fetchProducts();
+      },
+      methods: {
+          // Fetch products from DummyJSON
+          async fetchProducts() {
+              // Fetch product using some url to DummyJSON and store resulting JSON in res var
+              const res = await fetch("https://dummyjson.com/products/category/womens-dresses?limit=5");
+              // Change JSON into JavaScript object and store in data var
+              const data = await res.json();
+              // Set newitem var to products array in data
+              this.newItem = data.products;
+              // Same but for other
+              const res2 = await fetch("https://dummyjson.com/products/category/mens-shirts?limit=5");
+              const data2 = await res2.json();
+              this.saleItem = data2.products;
+          }
+      }
     }).mount('#app');
   </script>
 
