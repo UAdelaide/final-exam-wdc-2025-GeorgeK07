@@ -14,18 +14,18 @@ router.get('/api/dogs', async (req, res, next) => {
     const [rows] = await db.query("SELECT name,size,username FROM Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id");
     res.json(rows);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch dogs' });
+    res.status(500).json({ error: "Failed to fetch dogs" });
   }
 });
 
 /* GET all open walk requests with dog name, requested time, location, and owner's username */
-router.get('/api/walkrequests/open', function(req, res, next) {
+router.get('/api/walkrequests/open', async (req, res, next) => {
   // Try catch for getting dog info
   try {
     const [rows] = await db.query("SELECT request_id,name,requested_time,duration_minutes,location,username FROM ((Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id) INNER JOIN WalkRequests ON Dogs.dog_id = WalkRequests.dog_id) WHERE WalkRequests.status = 'open'");
     res.json(rows);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch dogs' });
+    res.status(500).json({ error: "Failed to fetch dogs" });
   }
   // Connect to the database
   req.pool.getConnection(function(err, connection) {
