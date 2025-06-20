@@ -6,6 +6,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET home page. */
 router.get('/api/dogs', function(req, res, next) {
   //Connect to the database
   req.pool.getConnection(function(err, connection) {
