@@ -63,7 +63,7 @@ router.post('/users/login', async (req, res) => {
     if (rows.password_hash === req.body.pass) {
       res.json(rows);
     } else {
-      throw 'Error';
+      throw new Error('');
     }
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
