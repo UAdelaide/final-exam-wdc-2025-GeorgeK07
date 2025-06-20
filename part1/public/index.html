@@ -52,12 +52,13 @@
                 methods: {
                     // Fetch dog using Dog API
                     async fetchDog() {
-                        // Fetch dog using url to Dog API's dog of the day and store resulting JSON in res var
+                        //  Fetch dog using url to Dog API's dog of the day and
+                        // store resulting JSON in res var
                         const res = await fetch("https://dog.ceo/api/breeds/image/random");
                         // Change JSON into JavaScript object and store in data var
                         const data = await res.json();
                         console.log(data);
-                        // Set newitem var to products array in data
+                        // Set dogOfTheDay var to products array in data
                         this.dogOfTheDay = data;
                     }
                 }
