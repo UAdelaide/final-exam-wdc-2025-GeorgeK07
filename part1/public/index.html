@@ -63,12 +63,12 @@
                     // Return arrays with products in them
                     return {
                         // Specific to this page
-                        newItem: ""
+                        dogOfTheDay: ""
                     };
                 },
                 created() {
-                    // When website is loaded, run the fetchProducts function
-                    this.fetchProducts();
+                    // When website is loaded, run the fetchDog function
+                    this.fetchDog();
                 },
                 methods: {
                     // Fetch products from DummyJSON
@@ -78,7 +78,7 @@
                         // Change JSON into JavaScript object and store in data var
                         const data = await res.json();
                         // Set newitem var to products array in data
-                        this.newItem = data.products;
+                        this.dogOfTheDay = data.products;
                     }
                 }
             }).mount("#app"); // Vue usable in part of body inside element with id="app"
