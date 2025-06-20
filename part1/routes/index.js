@@ -8,7 +8,13 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET all dogs and their owner's usernames */
-router.get('/api/dogs', function(req, res, next) {
+router.get('/api/dogs', async (req, res, next) {
+  try {
+    const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
+    res.json(rows);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
   // // Connect to the database
   // req.pool.getConnection(function(err, connection) {
   //   if (err) {
