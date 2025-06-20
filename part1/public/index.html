@@ -30,9 +30,7 @@
             <h2>DOG OF THE DAY</h2>
             <p>look at it</p>
             <div class="items" v-for="({ message, status }, index) in dogOfTheDay">
-                <a class="item-title" :href="'/product.html?q=' + title" href="/"><img class="item-img" :src="message" src="https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png" :alt="title" alt="Clothes"></a>
-                <a class="item-title" :href="'/product.html?q=' + title" href="/">{{ title }}</a>
-                <p>${{ price }}</p>
+                <img class="item-img" :src="message" src="https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png" :alt="title" alt="Clothes"></a>
             </div>
             <!--Footer (Copyright and other info)-->
             <div id="footer">
