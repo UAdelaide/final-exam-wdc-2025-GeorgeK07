@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET all dogs and their owner's usernames */
-router.get('/api/dogs', async (req, res, next) => {
+router.get('/api/dogs', async(req, res, next) => {
   // Try catch for getting dog info
   try {
     const [rows] = await db.query("SELECT name,size,username FROM Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id");
@@ -19,7 +19,7 @@ router.get('/api/dogs', async (req, res, next) => {
 });
 
 /* GET all open walk requests with dog name, requested time, location, and owner's username */
-router.get('/api/walkrequests/open', async (req, res, next) => {
+router.get('/api/walkrequests/open', async(req, res, next) => {
   // Try catch for getting dog info
   try {
     const [rows] = await db.query("SELECT request_id,name,requested_time,duration_minutes,location,username FROM ((Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id) INNER JOIN WalkRequests ON Dogs.dog_id = WalkRequests.dog_id) WHERE WalkRequests.status = 'open'");
@@ -30,7 +30,7 @@ router.get('/api/walkrequests/open', async (req, res, next) => {
 });
 
 /* GET summary of walkers with their average rating and number of walks completed */
-router.get('/api/walkers/summary', async(req, res, next) {
+router.get('/api/walkers/summary', async(req, res, next) => {
   // Try catch for getting dog info
   try {
     const [rows] = await db.query("SELECT request_id,name,requested_time,duration_minutes,location,username FROM ((Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id) INNER JOIN WalkRequests ON Dogs.dog_id = WalkRequests.dog_id) WHERE WalkRequests.status = 'open'");
