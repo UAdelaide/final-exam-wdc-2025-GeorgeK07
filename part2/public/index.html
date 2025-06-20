@@ -35,6 +35,21 @@
         // Attempt to log in with entered details
         async login() {
           // Check for matching username in database
+          // Create an AJAX request
+          let xhttp = new XMLHttpRequest();
+          // Define function that runs when ready state is changed
+          xhttp.onreadystatechange = function() {
+              // Run code if ready state is 4 and status is 200
+              if (this.readyState === 4 && this.status === 200) {
+                  // Replace header level 1 text with color requested from /color.txt
+                  this.search_array = "HEUHISDUSD";
+                  console.log(this.search_array);
+              }
+          };
+          // Open connection to /color.txt with an asynchronous GET request
+          xhttp.open("GET", "/items?q="+SEARCH_TERM, true);
+          // Send request to /color.txt
+          xhttp.send();
         }
       }
     }).mount('#app');
