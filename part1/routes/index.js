@@ -6,9 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* GET home page. */
+/* GET all dogs and their owner's usernames */
 router.get('/api/dogs', function(req, res, next) {
-  //Connect to the database
+  // Connect to the database
   req.pool.getConnection(function(err, connection) {
     if (err) {
       res.sendStatus(500);
@@ -21,7 +21,7 @@ router.get('/api/dogs', function(req, res, next) {
         res.sendStatus(500);
         return;
       }
-      res.json(rows); //send response
+      res.json(rows); // send response
     });
   });
 });
