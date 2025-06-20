@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
 router.post('/users/login', async (req, res) => {
   try {
     // Get the user
-    const [rows] = await db.query('SELECT username, password FROM Users WHERE username = ?', [req.body.user]);
+    const [rows] = await db.query('SELECT username, password FROM Users WHERE username = "alice123"');
     console.log(rows);
     res.json(rows);
   } catch (error) {
