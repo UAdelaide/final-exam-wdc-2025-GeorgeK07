@@ -10,10 +10,10 @@ router.get('/', function(req, res, next) {
 /* GET all dogs and their owner's usernames */
 router.get('/api/dogs', async (req, res, next) => {
   try {
-    const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
+    const [rows] = await db.query('SELECT name,size,username FROM Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id');
     res.json(rows);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch users' });
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
   // // Connect to the database
   // req.pool.getConnection(function(err, connection) {
