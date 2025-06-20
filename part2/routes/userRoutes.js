@@ -60,7 +60,7 @@ router.post('/users/login', function(req, res) {
   try {
     // Get the user
     let user = req.body;
-    const [rows] = await db.query('SELECT username, password FROM Users WHERE username = ?', [user.user]);
+    const [rows] = db.query('SELECT username, password FROM Users WHERE username = ?', [user.user]);
     console.log(rows);
     res.json(rows);
   } catch (error) {
