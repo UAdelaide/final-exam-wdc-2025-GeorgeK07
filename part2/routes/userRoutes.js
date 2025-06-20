@@ -56,7 +56,7 @@ router.post('/login', async (req, res) => {
 });
 
 // POST username and password to server and check if matches anything in the database
-router.post('/users/login', async (req, res) => {
+router.post('/users/login', function(req, res) {
   try {
     // Get the user
     let user = req.body;
