@@ -63,6 +63,7 @@ router.post('/users/login', async (req, res) => {
     if (rows[0].password_hash === req.body.pass) {
       let credentials = [];
       credentials.push(rows[0].username);
+      credentials.push(rows[0].role);
       res.json(rows);
     } else {
       throw new Error('Error');
