@@ -31,10 +31,10 @@ let db;
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
         (1, 2, 'accepted'),
-        (2, 4, 3, 'accepted'),
-        (3, 2, 5, 'accepted'),
-        (4, 4, 1, 'accepted'),
-        (5, 2, 1, 'accepted')
+        (2, 4, 'accepted'),
+        (3, 2, 'accepted'),
+        (4, 4, 'accepted'),
+        (5, 2, 'accepted')
       `);
     }
 
