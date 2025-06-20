@@ -57,16 +57,16 @@ router.post('/login', async (req, res) => {
 
 // POST username and password to server and check if matches anything in the database
 router.post('/users/login', async (req, res) => {
-  //try {
+  try {
     // Get the user
-    let user = JSON.parse(req.body);
+    let user = req.body.param1;
     console.log(req.body);
     const [rows] = await db.query('SELECT username, password FROM Users WHERE username = ?', [user.user]);
     console.log(rows);
     res.json(rows);
-  //} catch (error) {
-  //  res.status(500).json({ error: 'Failed to fetch users' });
-  //}
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
 });
 
 module.exports = router;
