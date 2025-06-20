@@ -30,13 +30,13 @@ let db;
     if (rows[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
-        (, 'George Orwell'),
-        ('To Kill a Mockingbird', 'Harper Lee'),
-        ('Brave New World', 'Aldous Huxley')
+        (),
+        (),
+        ()
       `);
     }
   } catch (err) {
-    console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
+    console.error('Error setting up database. Ensure MySQL is running: service mysql start', err);
   }
 })();
 
