@@ -186,11 +186,11 @@ function login(){
 
     // Define function to run on response
     xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             let credentials = JSON.parse(this.responseText);
             alert("Welcome " + credentials[0].username);
 
-        } else if (this.readyState == 4 && this.status >= 400) {
+        } else if (this.readyState === 4 && this.status >= 400) {
             alert("Login failed");
         }
     };
