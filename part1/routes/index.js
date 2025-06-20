@@ -16,22 +16,6 @@ router.get('/api/dogs', async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
-  // // Connect to the database
-  // req.pool.getConnection(function(err, connection) {
-  //   if (err) {
-  //     res.sendStatus(500);
-  //     return;
-  //   }
-  //   var query = "SELECT name,size,username FROM Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id";
-  //   connection.query(query, function(err, rows, fields) {
-  //     connection.release(); // release connection
-  //     if (err) {
-  //       res.sendStatus(500);
-  //       return;
-  //     }
-  //     res.json(rows); // send response
-  //   });
-  // });
 });
 
 /* GET all open walk requests with dog name, requested time, location, and owner's username */
