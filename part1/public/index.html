@@ -28,8 +28,8 @@
             </div>
             <!--New Items (use Vue to generate items from info in API)-->
             <h2>DOG OF THE DAY</h2>
-            <p>Stunning new designs for the new season</p>
-            <div class="items" v-for="({ thumbnail, title, price }, index) in newItem">
+            <p>look at it</p>
+            <div class="items" v-for="({ message, status }, index) in dogOfTheDay">
                 <a class="item-title" :href="'/product.html?q=' + title" href="/"><img class="item-img" :src="thumbnail" src="https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png" :alt="title" alt="Clothes"></a>
                 <a class="item-title" :href="'/product.html?q=' + title" href="/">{{ title }}</a>
                 <p>${{ price }}</p>
