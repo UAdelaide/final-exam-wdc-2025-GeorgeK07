@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 /* GET all dogs and their owner's usernames */
 router.get('/api/dogs', async (req, res, next) => {
-  // Try catch for 
+  // Try catch for getting dog info
   try {
     const [rows] = await db.query('SELECT name,size,username FROM Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id');
     res.json(rows);
