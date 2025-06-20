@@ -57,10 +57,10 @@ router.post('/login', async (req, res) => {
 
 // POST username and password to server and check if matches anything in the database
 router.post('/users/login', async (req, res) => {
-  console.log(req.body);
   try {
     // Get the user
     let user = JSON.parse(req.body);
+  console.log(req.body);
     const [rows] = await db.query('SELECT username, password FROM Users WHERE username = ?', [user.user]);
     console.log(rows);
     res.json(rows);
