@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
 router.post('/users/login', async (req, res) => {
   try {
     // Get the user
-    let 
+    let users = req.body;
     const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
     res.json(rows);
   } catch (error) {
