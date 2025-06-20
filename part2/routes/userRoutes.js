@@ -68,6 +68,7 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
+let colorName = ["red", "yellow", "green", "blue"];
 
 // Set color index (AJAX version, uses same array as original but with different index variable)
 let colorIndexAJAX = 0;
