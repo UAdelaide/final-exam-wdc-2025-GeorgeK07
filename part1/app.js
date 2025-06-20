@@ -19,8 +19,10 @@ var app = express();
 //  Middleware for accessing database: We need access to the database to be
 // available *before* we process routes in index.js, so this code needs to be
 // *before* the app.use('/', routes);
-//  Express will run this function on every request and then continue with the next module, index.js.
-// So for all requests that we handle in index.js, we’ll be able to access the pool of connections using req.pool
+//  Express will run this function on every request and then continue with the
+// next module, index.js.
+//  So for all requests that we handle in index.js, we’ll be able to access the
+// pool of connections using req.pool
 app.use(function(req, res, next) {
   req.pool = dbConnectionPool;
   next();
