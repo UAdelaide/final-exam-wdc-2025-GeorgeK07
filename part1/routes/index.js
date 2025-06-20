@@ -15,14 +15,14 @@ router.get('/result', function(req, res, next) {
     }
     var query = "SHOW TABLES";
     connection.query(query, function(err, rows, fields) {
-connection.release(); // release connection
-if (err) {
-res.sendStatus(500);
-return;
-}
-res.json(rows); //send response
-});
-});
+      connection.release(); // release connection
+      if (err) {
+        res.sendStatus(500);
+        return;
+      }
+      res.json(rows); //send response
+    });
+  });
 });
 
 module.exports = router;
