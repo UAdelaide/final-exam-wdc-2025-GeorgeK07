@@ -30,11 +30,11 @@ let db;
     if (rows_wa[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, applied_at, status) VALUES
-        (1, 2, 3, 'pending'),
-        (2, 4, 3, 1, 'accepted'),
-        (3, 2, 5, 5, 'My dog is very happy.'),
-        (4, 4, 1, 4, 'My dog likes you.'),
-        (5, 2, 1, 2, 'My dog gets sad when people walk too fast, slow down.')
+        (1, 2, 3, 'accepted'),
+        (2, 4, 3, 'accepted'),
+        (3, 2, 5, 'accepted'),
+        (4, 4, 1, 'accepted'),
+        (5, 2, 1, 2, 'accepted')
       `);
     }
 
