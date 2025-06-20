@@ -20,7 +20,6 @@
                         {{ isLoggedIn ? firstName : 'Log In' }}
                     </a>
                     <img class="nav-bar-account-img" v-if="isLoggedIn" :src="user.profile_picture || 'https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg'" src=" " alt="User Icon"/>
-                    <input name="q" type="text" placeholder="Search...">
                 </nav>
             </div>
             <!--Gallery slide-->
@@ -49,6 +48,7 @@
             </div>
             <!--Footer (Copyright and other info)-->
             <div id="footer">
+                <input type="text" placeholder="Search...">
                 <br/>
                 <p>© Copyright GAB Inc.</p>
                 <p>All rights reserved</p>
