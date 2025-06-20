@@ -14,7 +14,7 @@ router.get('/api/dogs', function(req, res, next) {
       res.sendStatus(500);
       return;
     }
-    var query = "SHOW TABLES";
+    var query = "SELECT ";
     connection.query(query, function(err, rows, fields) {
       connection.release(); // release connection
       if (err) {
