@@ -68,4 +68,20 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
+
+// Set color index (AJAX version, uses same array as original but with different index variable)
+let colorIndexAJAX = 0;
+
+/* GET webpage with variously changing colored texts depending on the number of visits (AJAX version) */
+router.get('/color.txt', function(req, res, next) {
+  // Send webpage with h1 name and color as variable
+  res.send(colorName[colorIndexAJAX]);
+  // Increment color index if its not 3 and reset to 0 if so
+  if (colorIndexAJAX != 3) {
+    colorIndexAJAX++;
+  } else {
+    colorIndexAJAX = 0;
+  }
+});
+
 module.exports = router;
