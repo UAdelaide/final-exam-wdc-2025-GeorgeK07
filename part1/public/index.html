@@ -1,14 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Express</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-</head>
-<body>
-    <div id="app">
-        <h1>Express</h1>
-        <p>Welcome to Express</p>
-    </div>
-</body>
+    <head>
+        <title>Dog Walkers Unite</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+        <link id="css-file" rel="stylesheet" href="stylesheets/style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="changeCSS.js"></script>
+    </head>
+    <body>
+        <!--Page written by George-->
+        <div id="app">
+            <!--Header (Title and navbar)-->
+            <div id="header">
+                <a href="/"><img class="title-img" src="images/logo.gif" alt="Clothes World Title"></a>
+                <nav class="nav-bar">
+                    <a class="nav-bar-list" href="/">Home</a>
+                    <a class="nav-bar-list" href="search.html?q=%23sunglasses">New</a>
+                    <a class="nav-bar-list" href="search.html?q=%23mens-shirts">Mens</a>
+                    <a class="nav-bar-list" href="search.html?q=%23womens-dresses">Womens</a>
+                    <a class="nav-bar-list" onclick="changeCSS()">☼︎/☽︎</a>
+                    <a class="nav-bar-login" :href="isLoggedIn ? 'account.html' : 'login.html'">
+                        {{ isLoggedIn ? firstName : 'Log In' }}
+                    </a>
+                    <img class="nav-bar-account-img" v-if="isLoggedIn" :src="user.profile_picture || 'https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg'" src=" " alt="User Icon"/>
+                    <form class="nav-bar-search" action="/search.html">
+                        <input name="q" type="text" placeholder="Search...">
+                    </form>
+                </nav>
+            </div>
+            <!--Gallery slide-->
+            <div id="gallery-slide">
+                <img class="gallery-img" src="https://mrwallpaper.com/images/hd/ultrawide-beach-t02blqrzhwnxjf9f.jpg" alt="New season image">
+            </div>
+            <!--New Items (use Vue to generate items from info in API)-->
+            <h2>New Items</h2>
+            <p>Stunning new designs for the new season</p>
+            <div class="item-slide">
+                <div class="items" v-for="({ thumbnail, title, price }, index) in newItem">
+                    <a class="item-title" :href="'/product.html?q=' + title" href="/"><img class="item-img" :src="thumbnail" src="https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png" :alt="title" alt="Clothes"></a>
+                    <a class="item-title" :href="'/product.html?q=' + title" href="/">{{ title }}</a>
+                    <p>${{ price }}</p>
+                </div>
+            </div>
+            <!--Sale Items-->
+            <h2>Sale Items</h2>
+            <p>High quality clothes for low prices</p>
+            <div class="item-slide">
+                <div class="items" v-for="({ thumbnail, title, price }, index) in saleItem">
+                    <a class="item-title" :href="'/product.html?q=' + title" href="/"><img class="item-img" :src="thumbnail" src="https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png" :alt="title" alt="Clothes"></a>
+                    <a class="item-title" :href="'/product.html?q=' + title" href="/">{{ title }}</a>
+                    <p>${{ price }}</p>
+                </div>
+            </div>
+            <!--Footer (Copyright and other info)-->
+            <div id="footer">
+                <br/>
+                <p>© Copyright GAB Inc.</p>
+                <p>All rights reserved</p>
+                <br/>
+            </div>
+        </div>
+        <!--Vue script-->
+        <script>
+            // Create Vue app and store as object in vueinst var
+            const vueinst = Vue.createApp({
+                data() {
+                    // Return arrays with products in them
+                    return {
+                        // Generic for all pages
+                        isLoggedIn: false,
+                        firstName: '',
+                        user: {},
+                        // Specific to this page
+                        newItem: "",
+                        saleItem: ""
+                    };
+                },
+                created() {
+                    // When website is loaded, run the fetchProducts function
+                    this.fetchProducts();
+                },
+                methods: {
+                    // Fetch products from DummyJSON
+                    async fetchProducts() {
+                        // Fetch product using some url to DummyJSON and store resulting JSON in res var
+                        const res = await fetch("https://dummyjson.com/products/category/womens-dresses?limit=5");
+                        // Change JSON into JavaScript object and store in data var
+                        const data = await res.json();
+                        // Set newitem var to products array in data
+                        this.newItem = data.products;
+                        // Same but for other
+                        const res2 = await fetch("https://dummyjson.com/products/category/mens-shirts?limit=5");
+                        const data2 = await res2.json();
+                        this.saleItem = data2.products;
+                    }
+                },
+                mounted() {
+                    // Login status is checked at page load to display user in menu bar if logged in
+                    fetch('/auth/user')
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.loggedIn) {
+                                this.isLoggedIn = true;
+                                // Display first name in menu bar
+                                this.firstName = data.user.name.split(' ')[0];
+                                this.user = data.user;
+                            }
+                        })
+                        .catch(err => {
+                            console.error("Session check failed", err);
+                        });
+                }
+            }).mount("#app"); // Vue usable in part of body inside element with id="app"
+        </script>
+    </body>
 </html>
