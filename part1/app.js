@@ -32,7 +32,7 @@ let db;
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
         (3, 2, 5, 5, 'My dog is very happy.'),
         (1, 2, 3, 3, 'My dog is tired after the walk.'),
-        (3, 2, 5, 5, 'My dog is very happy.'),
+        (2, 4, 2, 5, 'My dog is very happy.'),
         (3, 2, 5, 5, 'My dog is very happy.'),
         (3, 2, 5, 5, 'My dog is very happy.')
       `);
