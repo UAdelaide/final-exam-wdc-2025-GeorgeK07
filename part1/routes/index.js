@@ -27,7 +27,7 @@ router.get('/api/dogs', function(req, res, next) {
 });
 
 /* GET all open walk requests with dog name, requested time, location, and owner's username */
-router.get('/api/dogs', function(req, res, next) {
+router.get('/api/walkrequests/open', function(req, res, next) {
   // Connect to the database
   req.pool.getConnection(function(err, connection) {
     if (err) {
