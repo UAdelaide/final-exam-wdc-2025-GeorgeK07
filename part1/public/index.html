@@ -24,7 +24,7 @@
             <!--New Items (use Vue to generate items from info in API)-->
             <h2>DOG OF THE DAY</h2>
             <p>look at it</p>
-            <div class="items" v-for="({ message, status }, index) in dogOfTheDay">
+            <div class="items" v-for="message in dogOfTheDay">
                 <img class="item-img" :src="message" src="https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png" alt="Not a dog (fooling blind people because I can)">
             </div>
             <!--Footer (Copyright and other info)-->
