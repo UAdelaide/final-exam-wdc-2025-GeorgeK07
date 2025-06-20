@@ -15,11 +15,6 @@
                     <a class="nav-bar-list" href="search.html?q=%23sunglasses">New</a>
                     <a class="nav-bar-list" href="search.html?q=%23mens-shirts">Mens</a>
                     <a class="nav-bar-list" href="search.html?q=%23womens-dresses">Womens</a>
-                    <a class="nav-bar-list" onclick="changeCSS()">☼︎/☽︎</a>
-                    <a class="nav-bar-login" :href="isLoggedIn ? 'account.html' : 'login.html'">
-                        {{ isLoggedIn ? firstName : 'Log In' }}
-                    </a>
-                    <img class="nav-bar-account-img" v-if="isLoggedIn" :src="user.profile_picture || 'https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg'" src=" " alt="User Icon"/>
                 </nav>
             </div>
             <!--Gallery slide-->
