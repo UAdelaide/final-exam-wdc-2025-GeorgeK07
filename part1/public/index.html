@@ -78,7 +78,7 @@
                         // Change JSON into JavaScript object and store in data var
                         const data = await res.json();
                         // Set newitem var to products array in data
-                        this.dogOfTheDay = data.products;
+                        this.dogOfTheDay = data;
                     }
                 }
             }).mount("#app"); // Vue usable in part of body inside element with id="app"
