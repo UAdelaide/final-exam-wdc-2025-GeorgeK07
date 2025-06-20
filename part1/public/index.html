@@ -89,22 +89,6 @@
                         const data2 = await res2.json();
                         this.saleItem = data2.products;
                     }
-                },
-                mounted() {
-                    // Login status is checked at page load to display user in menu bar if logged in
-                    fetch('/auth/user')
-                        .then(res => res.json())
-                        .then(data => {
-                            if (data.loggedIn) {
-                                this.isLoggedIn = true;
-                                // Display first name in menu bar
-                                this.firstName = data.user.name.split(' ')[0];
-                                this.user = data.user;
-                            }
-                        })
-                        .catch(err => {
-                            console.error("Session check failed", err);
-                        });
                 }
             }).mount("#app"); // Vue usable in part of body inside element with id="app"
         </script>
