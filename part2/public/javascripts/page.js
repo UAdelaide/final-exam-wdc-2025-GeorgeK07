@@ -180,7 +180,6 @@ function login(){
         user: document.getElementById('username').value,
         pass: document.getElementById('password').value
     };
-    console.log(user);
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
