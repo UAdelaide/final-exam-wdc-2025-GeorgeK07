@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET all dogs and their owner's usernames */
-router.get('/api/dogs', async (req, res, next) {
+router.get('/api/dogs', async (req, res, next) => {
   try {
     const [rows] = await db.query('SELECT user_id, username, email, role FROM Users');
     res.json(rows);
