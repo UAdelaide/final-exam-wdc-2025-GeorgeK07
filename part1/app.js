@@ -30,7 +30,7 @@ let db;
     if (rows_wa[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
-        (1, 2, 'accepted'),
+        ((SELECT dog_id FROM Dogs WHERE name = "Max"), 2, 'accepted'),
         (2, 4, 'accepted'),
         (3, 2, 'accepted'),
         (4, 4, 'accepted'),
