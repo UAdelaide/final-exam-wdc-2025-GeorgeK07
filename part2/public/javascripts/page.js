@@ -173,7 +173,9 @@ function downvote(index) {
     updatePosts();
 }
 
-
+/*
+ * POST the username and password inserted
+ */
 function login(){
 
     let user = {
