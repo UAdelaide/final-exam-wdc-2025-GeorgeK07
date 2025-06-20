@@ -27,42 +27,17 @@ router.get('/api/walkrequests/open', async (req, res, next) => {
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch dogs" });
   }
-  // Connect to the database
-  req.pool.getConnection(function(err, connection) {
-    if (err) {
-      res.sendStatus(500);
-      return;
-    }
-    var query = "SELECT request_id,name,requested_time,duration_minutes,location,username FROM ((Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id) INNER JOIN WalkRequests ON Dogs.dog_id = WalkRequests.dog_id) WHERE WalkRequests.status = 'open'";
-    connection.query(query, function(err, rows, fields) {
-      connection.release(); // release connection
-      if (err) {
-        res.sendStatus(500);
-        return;
-      }
-      res.json(rows); // send response
-    });
-  });
 });
 
 /* GET summary of walkers with their average rating and number of walks completed */
-router.get('/api/walkers/summary', function(req, res, next) {
-  // Connect to the database
-  req.pool.getConnection(function(err, connection) {
-    if (err) {
-      res.sendStatus(500);
-      return;
-    }
-    var query = "SELECT request_id,name,requested_time,duration_minutes,location,username FROM ((Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id) INNER JOIN WalkRequests ON Dogs.dog_id = WalkRequests.dog_id) WHERE WalkRequests.status = 'open'";
-    connection.query(query, function(err, rows, fields) {
-      connection.release(); // release connection
-      if (err) {
-        res.sendStatus(500);
-        return;
-      }
-      res.json(rows); // send response
-    });
-  });
+router.get('/api/walkers/summary', async(req, res, next) {
+  // Try catch for getting dog info
+  try {
+    const [rows] = await db.query("SELECT request_id,name,requested_time,duration_minutes,location,username FROM ((Users INNER JOIN Dogs ON Users.user_id = Dogs.owner_id) INNER JOIN WalkRequests ON Dogs.dog_id = WalkRequests.dog_id) WHERE WalkRequests.status = 'open'");
+    res.json(rows);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch dogs" });
+  }
 });
 
 module.exports = router;
