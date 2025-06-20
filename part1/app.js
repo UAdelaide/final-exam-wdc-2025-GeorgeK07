@@ -30,7 +30,7 @@ let db;
     if (rows[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
-        (3, (SELECT dog_id FROM WalkRequests WHERE request_id = 3), (SELECT owner_id FROM Dogs WHERE dog_id = 3)),
+        (3, 2, 5),
         (),
         ()
       `);
