@@ -29,7 +29,7 @@ let db;
     const [rows_wa] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (rows_wa[0].count === 0) {
       await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
+        INSERT INTO WalkApplications (request_id, walker_id, owner_id, rating, comments) VALUES
         (1, 2, 3, 3, 'My dog is tired after the walk.'),
         (2, 4, 3, 1, 'My dog is very aggressive, what did you do?'),
         (3, 2, 5, 5, 'My dog is very happy.'),
