@@ -2,19 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-// POST username and password to server and check if matches anything in the database
-router.post('/users/login', async (req, res) => {
-  try {
-    // Get the user
-    let user = req.body;
-    const [rows] = await db.query('SELECT username, password FROM Users WHERE username = ?', [user.user]);
-    console.log(rows);
-    res.json(rows);
-  } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch users' });
-  }
-});
-
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
   try {
@@ -65,6 +52,19 @@ router.post('/login', async (req, res) => {
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
+  }
+});
+
+// POST username and password to server and check if matches anything in the database
+router.post('/users/login', async (req, res) => {
+  try {
+    // Get the user
+    let user = req.body;
+    const [rows] = await db.query('SELECT username, password FROM Users WHERE username = ?', [user.user]);
+    console.log(rows);
+    res.json(rows);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch users' });
   }
 });
 
