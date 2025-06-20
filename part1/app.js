@@ -33,8 +33,8 @@ let db;
         (3, 2, 5, 5, 'My dog is very happy.'),
         (1, 2, 3, 3, 'My dog is tired after the walk.'),
         (2, 4, 3, 1, 'My dog is very aggressive, what did you do?'),
-        (3, 2, 5, 5, 'My dog is very happy.'),
-        (3, 2, 5, 5, 'My dog is very happy.')
+        (3, 2, 5, 5, 'My dog likes you.'),
+        (3, 2, 5, 5, 'My dog is .')
       `);
     }
   } catch (err) {
