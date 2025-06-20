@@ -46,8 +46,8 @@ router.get('/api/walkrequests/open', function(req, res, next) {
   });
 });
 
-/* GET summary of walkers with their average rating */
-router.get('/api/walkrequests/open', function(req, res, next) {
+/* GET summary of walkers with their average rating and number of walks completed */
+router.get('/api/walkers/summary', function(req, res, next) {
   // Connect to the database
   req.pool.getConnection(function(err, connection) {
     if (err) {
