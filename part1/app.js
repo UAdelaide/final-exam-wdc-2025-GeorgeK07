@@ -39,8 +39,8 @@ let db;
     }
 
     // Insert data if table is empty
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
-    if (rows[0].count === 0) {
+    const [rows_wr] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
+    if (rows_wr[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
         (1, 2, 3, 3, 'My dog is tired after the walk.'),
