@@ -33,7 +33,8 @@ router.get('/api/walkrequests/open', async(req, res, next) => {
 router.get('/api/walkers/summary', async(req, res, next) => {
   // Try catch for getting dog info
   try {
-    const [rows] = await db.query("SELECT username,rating FROM Users INNER JOIN WalkRatings ON Users.user_id = WalkRatings.walker_id");
+    const [rows] = await db.query("SELECT walker_id,COUNT(walker_id) AS "total_ratings",SUM(walker_id) AS "average_rating",COUNT(walker_id) AS "completed_walks" FROM WalkRatings
+GROUP BY walker_id");
     res.json(rows);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch dogs" });
