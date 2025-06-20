@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
 router.post('/users/login', async (req, res) => {
   try {
     // Get the user
-    const [rows] = await db.query('SELECT username, password_hash FROM Users WHERE username = ?', [req.body.user]);
+    const [rows] = await db.query('SELECT username, password_hash, role FROM Users WHERE username = ?', [req.body.user]);
     if (rows[0].password_hash === req.body.pass) {
       res.json(rows);
     } else {
