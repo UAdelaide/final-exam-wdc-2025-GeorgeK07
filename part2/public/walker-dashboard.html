@@ -28,7 +28,7 @@
               <strong>Location:</strong> {{ walk.location }}<br>
               <strong>Owner:</strong> {{ walk.owner_name }}
             </p>
-            <button type=button class="btn btn-outline-success" @click="applyToWalk(walk.request_id)">Apply</button>
+            <button type=button class="btn btn-outline-success" @click="applyToWalk()">Apply</button>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
           }
         }
 
-        async function applyToWalk(requestId) {
+        async function applyToWalk() {
           console.log(await getCurrentUser());
           try {
             const res = await fetch('/api/walks/' + user_id + '/apply', {
