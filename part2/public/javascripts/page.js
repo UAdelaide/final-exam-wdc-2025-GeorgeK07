@@ -239,7 +239,8 @@ function loadMyDogs(){
         if (this.readyState === 4 && this.status === 200) {
             console.log(xmlhttp.responseText);
             let dogNames = JSON.parse(xmlhttp.responseText);
-            document.getElementById("dog_names");
+            let drop_down = document.getElementById("dog_names");
+            let option = document.createElement("option");
         }
     };
     // Open connection to server & GET the user data
