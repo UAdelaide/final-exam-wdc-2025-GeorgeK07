@@ -238,13 +238,13 @@ function loadMyDogs(){
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
             // Convert dog names into javascript object
-            let dogNames = JSON.parse(xmlhttp.responseText);
+            let dog_names_array = JSON.parse(xmlhttp.responseText);
             // Get the dropdown element
             let drop_down = document.getElementById("dog_names");
             // For all dog names obtained, create a new option in the dropdown
-            for (let i = 0; i < dogNames.length; i++) {
+            for (let i = 0; i < dog_names_array.length; i++) {
                 let new_dog_name = document.createElement("option");
-                new_dog_name.text = dogNames[i].name;
+                new_dog_name.text = dog_names_array[i].name;
                 drop_down.add(new_dog_name);
             }
         }
