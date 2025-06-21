@@ -192,6 +192,8 @@ function login(){
             let role = JSON.parse(this.responseText);
             if (role === "owner") {
                 window.location.href = '/owner-dashboard.html';
+            } else {
+                window.location.href = '/walker-dashboard.html';
             }
             alert("Welcome " + username);
 
