@@ -268,8 +268,7 @@ async function getCurrentUser() {
             return xmlhttp.responseText;
         }
     };
-    // Open connection to server & GET the user's dog data
+    // Open connection to server & GET the user's id
     xmlhttp.open("GET", "/api/users/me", true);
     xmlhttp.send();
 }
-
