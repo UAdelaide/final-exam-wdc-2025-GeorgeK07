@@ -296,8 +296,9 @@ function addDogsTable(){
                 let dog_name = dog_row.insertCell();
                 dog_name.innerText = dog_info_array[0].name;
                 let dog_size = dog_row.insertCell();
-                dog_name.innerText = dog_info_array[0].name;
+                dog_size.innerText = dog_info_array[0].size;
                 let dog_owner_id = dog_row.insertCell();
+                dog_owner_id.innerText = dog_info_array[0].size;
                 let dog_photo = dog_row.insertCell();
                 let new_dog_name = document.createElement("option");
                 new_dog_name.text = dog_info_array[i].name;
