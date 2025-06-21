@@ -69,7 +69,7 @@ router.post('/users/login', async (req, res) => {
     // Check if password entered and in database match
     if (rows[0].password_hash === req.body.pass) {
       // Set elements in session to data from database
-      req.session.
+      req.session.id = rows[0].user_id;
       req.session.user = rows[0].username;
       req.session.pass = rows[0].password_hash;
       req.session.role = rows[0].role;
