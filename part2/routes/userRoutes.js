@@ -64,8 +64,8 @@ router.post('/users/login', async (req, res) => {
     // Check if password entered and in database match
     if (rows[0].password_hash === req.body.pass) {
       // Set elements in session to data from database
-      req.session.username = rows[0].username;
-      req.session.password_hash = rows[0].password_hash;
+      req.session.user = rows[0].username;
+      req.session.pass = rows[0].password_hash;
       req.session.role = rows[0].role;
       // Send role back to check which page to go to in login()
       res.json(rows[0].role);
