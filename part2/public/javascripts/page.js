@@ -257,7 +257,7 @@ function loadMyDogs(){
 /*
  * GET id of current user
  */
-function getCurrentUser() {
+async function getCurrentUser() {
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
     // Define function that runs when ready state is changed
@@ -266,7 +266,7 @@ function getCurrentUser() {
         if (this.readyState === 4 && this.status === 200) {
             // Return id of user
             console.log(xmlhttp.responseText);
-            return JSON.parse(xmlhttp.responseText);
+            await return JSON.parse(xmlhttp.responseText);
         }
     };
     // Open connection to server & GET the user's id
