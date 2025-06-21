@@ -72,7 +72,7 @@ router.post('/users/login', async (req, res) => {
       } else if () {
 
       } else {
-        
+        console.log("This should never happen.");
       }
       res.redirect();
     } else {
