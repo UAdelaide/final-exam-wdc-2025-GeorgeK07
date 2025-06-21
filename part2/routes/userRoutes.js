@@ -35,7 +35,8 @@ router.get('/me', async (req, res) => {
   }
   // Get the user's dogs from database
   const [rows] = await db.query('SELECT name FROM Dogs WHERE owner_id = ?', [req.body.user]);
-  res.json(rows);
+  console.log(rows);
+  res.json(rows.user);
 });
 
 // POST login (dummy version)
