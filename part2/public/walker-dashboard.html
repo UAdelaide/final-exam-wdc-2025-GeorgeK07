@@ -66,7 +66,8 @@
                     // Return id of user
                     console.log(JSON.parse(xmlhttp.responseText));
                     let user_id = JSON.parse(xmlhttp.responseText);
-                    return JSON.parse(xmlhttp.responseText);
+                    console.log(JSON.parse(xmlhttp.responseText));
+                    return JSON.parse(user_id);
                 }
             };
             // Open connection to server & GET the user's id
