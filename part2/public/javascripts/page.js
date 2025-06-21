@@ -301,9 +301,6 @@ function addDogsTable(){
                 dog_owner_id.innerText = dog_info_array[0].owner_id;
                 let dog_photo = dog_row.insertCell();
                 dog_photo.innerHTML = "<a href='https://dog.ceo/api/breeds/image/random'></a>";
-                let new_dog_name = document.createElement("option");
-                new_dog_name.text = dog_info_array[i].name;
-                drop_down.add(new_dog_name);
             }
         }
     };
