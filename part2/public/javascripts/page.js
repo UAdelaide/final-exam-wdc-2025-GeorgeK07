@@ -284,15 +284,15 @@ function addDogsTable(){
     xmlhttp.onreadystatechange = function() {
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
-            // Convert dog names into javascript object
-            let dog_names_array = JSON.parse(xmlhttp.responseText);
+            // Convert dog info into javascript object
+            let dog_info_array = JSON.parse(xmlhttp.responseText);
             // Get the table element
             let table = document.getElementById("dog_table");
-            // For all dog names obtained, create a new row in the table
-            for (let i = 0; i < dog_names_array.length; i++) {
+            // For all dog info obtained, create a new row in the table
+            for (let i = 0; i < dog_info_array.length; i++) {
                 let dog
                 let new_dog_name = document.createElement("option");
-                new_dog_name.text = dog_names_array[i].name;
+                new_dog_name.text = dog_info_array[i].name;
                 drop_down.add(new_dog_name);
             }
         }
