@@ -216,6 +216,7 @@ function logout(){
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
+    // Send user back to homepage
     window.location.href = '/';
 
     // Open connection to server & send the post data using a POST request
