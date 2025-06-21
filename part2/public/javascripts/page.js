@@ -275,7 +275,7 @@ async function getCurrentUser() {
 }
 
 /*
- * GET names of all dogs and create table
+ * GET info of all dogs and create table
  */
 function addDogsTable(){
     // Create AJAX Request
