@@ -266,7 +266,7 @@ async function getCurrentUser() {
         if (this.readyState === 4 && this.status === 200) {
             // Return id of user
             // console.log(xmlhttp.responseText);
-            return null;
+            return xmlhttp.responseText;
         }
     };
     // Open connection to server & GET the user's id
