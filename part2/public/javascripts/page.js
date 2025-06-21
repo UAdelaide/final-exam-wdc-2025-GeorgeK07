@@ -285,7 +285,6 @@ function addDogsTable(){
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
             // Convert dog info into javascript object
-            console.log(JSON.parse(xmlhttp.responseText));
             let dog_info_array = JSON.parse(xmlhttp.responseText);
             // Get the table element
             let table = document.getElementById("dog_table");
@@ -301,7 +300,7 @@ function addDogsTable(){
                 let dog_owner_id = dog_row.insertCell();
                 dog_owner_id.innerText = dog_info_array[i].owner_id;
                 let dog_photo = dog_row.insertCell();
-                dog_photo.innerHTML = "<img href='https://dog.ceo/api/breeds/image/random'></a>";
+                dog_photo.innerHTML = "<img href='https://dog.ceo/api/breeds/image/random'>";
             }
         }
     };
