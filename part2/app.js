@@ -9,12 +9,12 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
-// 
-app.use(session({ // //
-secret: ‘a string of your choice’, // //
-resave: false, // THIS CODE //
-saveUninitialized: true, // //
-cookie: { secure: false } // //
+// Express session setup
+app.use(session({
+secret: 'a string of your choice',
+resave: false,
+saveUninitialized: true,
+cookie: { secure: false }
 }));
 
 // Routes
