@@ -297,6 +297,6 @@ function addDogsTable(){
         }
     };
     // Open connection to server & GET the user's dog data
-    xmlhttp.open("GET", "/api/users/mydogs", true);
+    xmlhttp.open("GET", "/api/users/api/dogs", true);
     xmlhttp.send();
 }
