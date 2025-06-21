@@ -27,23 +27,6 @@
         return {
           message: 'Welcome to the Dog Walking Service!'
         };
-      },
-      created() {
-          // When website is loaded, run the fetchDog function
-          this.fetchDog();
-      },
-      methods: {
-          // Fetch dog using Dog API
-          async fetchDog() {
-              //  Fetch dog using url to Dog API's dog of the day and
-              // store resulting JSON in res var
-              const res = await fetch("https://dog.ceo/api/breeds/image/random");
-              // Change JSON into JavaScript object and store in data variable
-              const data = await res.json();
-              console.log(data);
-              // Set dogOfTheDay var to array in data variable
-              this.dogOfTheDay = data;
-          }
       }
     }).mount('#app');
   </script>
