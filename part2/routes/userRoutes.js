@@ -66,11 +66,11 @@ router.post('/users/login', async (req, res) => {
       req.session.password_hash = rows[0].password_hash;
       req.session.role = rows[0].role;
       console.log(req.session);
-      res.json(rows[0].username);
+      // res.json(rows[0].username);
       if () {
-        res.redirect(/owner-dashboard.html);
+        res.redirect("/owner-dashboard.html");
       } else if () {
-        res.redirect("/walker-dashboard.html);
+        res.redirect("/walker-dashboard.html");
       } else {
         console.log("This should never happen.");
       }
