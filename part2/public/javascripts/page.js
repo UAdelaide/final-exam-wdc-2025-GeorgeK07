@@ -249,7 +249,7 @@ function loadMyDogs(){
             }
         }
     };
-    // Open connection to server & GET the user data
-    xmlhttp.open("GET", "/api/users/me", true);
+    // Open connection to server & GET the user's dog data
+    xmlhttp.open("GET", "/api/users/mydogs", true);
     xmlhttp.send();
 }
