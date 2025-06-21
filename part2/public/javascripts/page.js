@@ -240,7 +240,7 @@ function loadMyDogs(){
             console.log(xmlhttp.responseText);
             let dogNames = JSON.parse(xmlhttp.responseText);
             let drop_down = document.getElementById("dog_names");
-            let option = document.createElement("option");
+            let new_dog_name = document.createElement("option");
         }
     };
     // Open connection to server & GET the user data
