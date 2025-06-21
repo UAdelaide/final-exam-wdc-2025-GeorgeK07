@@ -275,9 +275,9 @@ async function getCurrentUser() {
 }
 
 /*
- * GET names of all dogs
+ * GET names of all dogs and create table
  */
-function loadMyDogs(){
+function addDogsTable(){
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
     // Define function that runs when ready state is changed
