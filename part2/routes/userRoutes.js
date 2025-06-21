@@ -74,7 +74,7 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
-// POST username and password to server and check if matches anything in the database
+// POST log out request and destroy log in
 router.post('/users/login', async (req, res) => {
   try {
     // Get the user
