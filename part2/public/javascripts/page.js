@@ -228,7 +228,7 @@ function logout(){
 }
 
 /*
- * POST a request to logout to /api/users/users/logout
+ * GET a user
  */
 function loadMyDogs(){
     // Create AJAX Request
