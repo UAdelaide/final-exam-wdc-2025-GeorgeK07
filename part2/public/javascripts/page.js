@@ -228,7 +228,7 @@ function logout(){
 }
 
 /*
- * GET a user
+ * GET names of dogs that user owns
  */
 function loadMyDogs(){
     // Create AJAX Request
