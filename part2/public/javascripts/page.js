@@ -255,7 +255,7 @@ function loadMyDogs(){
 }
 
 /*
- * GET names of current user
+ * GET id of current user
  */
 async function getCurrentUser() {
     // Create AJAX Request
@@ -277,7 +277,7 @@ async function getCurrentUser() {
         }
     };
     // Open connection to server & GET the user's dog data
-    xmlhttp.open("GET", "/api/users/mydogs", true);
+    xmlhttp.open("GET", "/api/users/me", true);
     xmlhttp.send();
 }
 
