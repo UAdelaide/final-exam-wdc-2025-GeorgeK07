@@ -1,3 +1,5 @@
+const { json } = require("express");
+
 var posts = [];
 var search = null;
 
@@ -236,7 +238,7 @@ function loadMyDogs(){
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
             console.log(xmlhttp.responseText);
-            
+            let dogNames = JSON.parse(xmlhttp.responseText);
         }
     };
     // Open connection to server & GET the user data
