@@ -191,7 +191,7 @@ function login(){
         if (this.readyState === 4 && this.status === 200) {
             let role = JSON.parse(this.responseText);
             if (role === "owner") {
-                location.href = 'newPage.html';
+                window.location.href = '/owner-dashboard.html';
             }
             alert("Welcome " + username);
 
