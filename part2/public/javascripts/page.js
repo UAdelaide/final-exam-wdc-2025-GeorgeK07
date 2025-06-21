@@ -265,8 +265,8 @@ async function getCurrentUser() {
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
             // Return id of user
-            console.log(xmlhttp.responseText);
-            return xmlhttp.responseText;
+            console.log(JSON.parse(xmlhttp.responseText));
+            return JSON.parse(xmlhttp.responseText);
         }
     };
     // Open connection to server & GET the user's id
