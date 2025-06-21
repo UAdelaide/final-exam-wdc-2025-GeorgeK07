@@ -34,7 +34,7 @@ router.get('/me', async (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
   // Get the user's dogs from database
-  const [rows] = await db.query('SELECT name FROM Dogs WHERE owner_id = 1');
+  const [rows] = await db.query('SELECT name FROM Dogs WHERE owner_id = 1', [req.session.id]);
   console.log(rows);
   res.json(rows[0].name);
 });
@@ -72,6 +72,7 @@ router.post('/users/login', async (req, res) => {
       req.session.email = rows[0].email;
       req.session.pass = rows[0].password_hash;
       req.session.role = rows[0].role;
+      console.log(rows);
       // Send role back to check which page to go to in login()
       res.json(rows[0].role);
     } else { // If not throw error
