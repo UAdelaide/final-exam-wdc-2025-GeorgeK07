@@ -293,13 +293,13 @@ function addDogsTable(){
             for (let i = 0; i < dog_info_array.length; i++) {
                 let dog_row = table.insertRow();
                 let dog_id = dog_row.insertCell();
-                dog_id.innerText = dog_info_array[0].dog_id;
+                dog_id.innerText = dog_info_array[i].dog_id;
                 let dog_name = dog_row.insertCell();
-                dog_name.innerText = dog_info_array[0].name;
+                dog_name.innerText = dog_info_array[i].name;
                 let dog_size = dog_row.insertCell();
-                dog_size.innerText = dog_info_array[0].size;
+                dog_size.innerText = dog_info_array[i].size;
                 let dog_owner_id = dog_row.insertCell();
-                dog_owner_id.innerText = dog_info_array[0].owner_id;
+                dog_owner_id.innerText = dog_info_array[i].owner_id;
                 let dog_photo = dog_row.insertCell();
                 dog_photo.innerHTML = "<a href='https://dog.ceo/api/breeds/image/random'></a>";
             }
