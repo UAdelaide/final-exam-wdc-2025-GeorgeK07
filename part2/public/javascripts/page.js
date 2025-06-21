@@ -190,12 +190,11 @@ function login(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             let role = JSON.parse(this.responseText);
+            // Check if user is owner or walker and send to correct page
             if (role === "owner") {
                 window.location.href = '/owner-dashboard.html';
             } else if (role === "walker") {
                 window.location.href = '/walker-dashboard.html';
-            } else {
-                console.log("This should never happen.");
             }
         } else if (this.readyState === 4 && this.status >= 400) {
             alert("Login failed");
