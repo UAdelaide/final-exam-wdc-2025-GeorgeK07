@@ -79,7 +79,7 @@ router.post('/users/logout', async (req, res) => {
   try {
     // Destroy session
     req.session.destroy();
-    res.clearCookie('connect.sid');
+    res.clearCookie("SessionCookie");
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
