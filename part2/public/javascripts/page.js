@@ -241,6 +241,7 @@ function loadMyDogs(){
             let dogNames = JSON.parse(xmlhttp.responseText);
             // Get the dropdown element
             let drop_down = document.getElementById("dog_names");
+            // For all dog names obtained, create a new option in the 
             for (let i = 0; i < dogNames.length; i++) {
                 let new_dog_name = document.createElement("option");
                 new_dog_name.text = dogNames[i].name;
