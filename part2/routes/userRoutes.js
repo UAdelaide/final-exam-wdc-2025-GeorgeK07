@@ -68,13 +68,12 @@ router.post('/users/login', async (req, res) => {
       console.log(req.session);
       res.json(rows[0].username);
       if () {
-
+        res.redirect();
       } else if () {
-
+        res.redirect();
       } else {
         console.log("This should never happen.");
       }
-      res.redirect();
     } else {
       throw new Error('Error');
     }
