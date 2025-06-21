@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // Express session setup
 app.use(session({
-  secret: 'a string of your choice',
+  secret: 'dogWalkingService',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: false }
