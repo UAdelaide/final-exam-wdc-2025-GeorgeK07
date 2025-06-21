@@ -239,6 +239,7 @@ function loadMyDogs(){
         if (this.readyState === 4 && this.status === 200) {
             console.log(xmlhttp.responseText);
             let dogNames = JSON.parse(xmlhttp.responseText);
+            document.getElementById
         }
     };
     // Open connection to server & GET the user data
