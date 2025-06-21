@@ -263,11 +263,11 @@ async function getCurrentUser() {
     // Define function that runs when ready state is changed
     xmlhttp.onreadystatechange = function() {
         // Run code if ready state is 4 and status is 200
-        if (this.readyState === 4 && this.status === 200) {
+        //if (this.readyState === 4 && this.status === 200) {
             // Return id of user
             // console.log(xmlhttp.responseText);
             return xmlhttp.responseText;
-        }
+        //}
     };
     // Open connection to server & GET the user's id
     xmlhttp.open("GET", "/api/users/me", true);
