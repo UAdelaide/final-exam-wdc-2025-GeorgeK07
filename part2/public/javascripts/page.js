@@ -292,10 +292,10 @@ function addDogsTable(){
             for (let i = 0; i < dog_info_array.length; i++) {
                 let dog_row = table.insertRow();
                 let dog_id = dog_row.insertCell();
-                let dog_id = dog_row.insertCell();
-                let dog_id = dog_row.insertCell();
-                let dog_id = dog_row.insertCell();
-                let dog_id = dog_row.insertCell();
+                let dog_name = dog_row.insertCell();
+                let dog_size = dog_row.insertCell();
+                let dog_owner_id = dog_row.insertCell();
+                let dog_photo = dog_row.insertCell();
                 let new_dog_name = document.createElement("option");
                 new_dog_name.text = dog_info_array[i].name;
                 drop_down.add(new_dog_name);
