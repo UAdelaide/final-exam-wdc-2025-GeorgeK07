@@ -33,9 +33,7 @@ router.get('/me', async (req, res) => {
   if (!req.session.username) {
     return res.status(401).json({ error: 'Not logged in' });
   }
-  // Get the user's dogs from database
-  const [rows] = await db.query('SELECT name FROM Dogs WHERE owner_id = ?', [req.session.user_id]);
-  res.json(rows);
+  res.json(req.session.username);
 });
 
 // GET current user's dog's info
