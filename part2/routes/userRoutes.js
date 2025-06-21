@@ -75,7 +75,7 @@ router.post('/users/login', async (req, res) => {
 });
 
 // POST log out request and destroy session
-router.post('/users/login', async (req, res) => {
+router.post('/users/logout', async (req, res) => {
   try {
     // Destroy session
     req.session.destroy();
