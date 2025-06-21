@@ -291,7 +291,11 @@ function addDogsTable(){
             // For all dog info obtained, create a new row in the table
             for (let i = 0; i < dog_info_array.length; i++) {
                 let dog_row = table.insertRow();
-                let 
+                let dog_id = dog_row.insertCell();
+                let dog_id = dog_row.insertCell();
+                let dog_id = dog_row.insertCell();
+                let dog_id = dog_row.insertCell();
+                let dog_id = dog_row.insertCell();
                 let new_dog_name = document.createElement("option");
                 new_dog_name.text = dog_info_array[i].name;
                 drop_down.add(new_dog_name);
