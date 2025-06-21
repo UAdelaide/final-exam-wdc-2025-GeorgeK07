@@ -253,3 +253,8 @@ function loadMyDogs(){
     xmlhttp.open("GET", "/api/users/mydogs", true);
     xmlhttp.send();
 }
+
+async function getCurrentUser() {
+
+}
+
