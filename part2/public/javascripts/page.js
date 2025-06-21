@@ -236,7 +236,7 @@ function loadMyDogs(){
     window.location.href = '/';
 
     // Open connection to server & send the post data using a POST request
-    xmlhttp.open("POST", "/api/users/users/logout", true);
+    xmlhttp.open("POST", "/api/users/me", true);
     xmlhttp.send();
 
 }
