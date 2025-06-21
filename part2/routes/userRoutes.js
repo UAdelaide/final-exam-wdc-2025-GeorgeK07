@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
 
 // GET current user info
 router.get('/me', async (req, res) => {
-  if (!req.session.user) {
+  if (!req.session.username) {
     return res.status(401).json({ error: 'Not logged in' });
   }
   // Get the user's dogs from database
@@ -67,10 +67,10 @@ router.post('/users/login', async (req, res) => {
     // Check if password entered and in database match
     if (rows[0].password_hash === req.body.pass) {
       // Set elements in session to data from database
-      req.session.id = "1";
-      req.session.user = rows[0].username;
+      req.session.user_id = ;
+      req.session.username = rows[0].username;
       req.session.email = rows[0].email;
-      req.session.pass = rows[0].password_hash;
+      req.session.password_hash = rows[0].password_hash;
       req.session.role = rows[0].role;
       console.log(req.session.id);
       console.log(req.session.user);
