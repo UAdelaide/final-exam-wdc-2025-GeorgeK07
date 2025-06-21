@@ -195,7 +195,7 @@ function login(){
             } else if (role === "walker") {
                 window.location.href = '/walker-dashboard.html';
             } else {
-
+                console.log("This should never happen.");
             }
         } else if (this.readyState === 4 && this.status >= 400) {
             alert("Login failed");
