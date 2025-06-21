@@ -192,11 +192,11 @@ function login(){
             let role = JSON.parse(this.responseText);
             if (role === "owner") {
                 window.location.href = '/owner-dashboard.html';
-            } else {
+            } else if (role === "walker") {
                 window.location.href = '/walker-dashboard.html';
-            }
-            alert("Welcome " + username);
+            } else {
 
+            }
         } else if (this.readyState === 4 && this.status >= 400) {
             alert("Login failed");
         }
