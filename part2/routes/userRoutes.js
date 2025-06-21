@@ -34,7 +34,7 @@ router.get('/me', async (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
   // Get the user's dogs from database
-  const [rows] = await db.query('SELECT name FROM Dogs WHERE owner_id = ?', [req.session.id]);
+  const [rows] = await db.query('SELECT name FROM Dogs WHERE owner_id = ?', [req.session.user_id]);
   console.log(rows);
   res.json(rows[0].name);
 });
@@ -67,7 +67,7 @@ router.post('/users/login', async (req, res) => {
     // Check if password entered and in database match
     if (rows[0].password_hash === req.body.pass) {
       // Set elements in session to data from database
-      req.session.user_id = ;
+      req.session.user_id = rows[0].user_id;
       req.session.username = rows[0].username;
       req.session.email = rows[0].email;
       req.session.password_hash = rows[0].password_hash;
