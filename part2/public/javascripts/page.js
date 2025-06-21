@@ -285,6 +285,7 @@ function addDogsTable(){
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
             // Convert dog info into javascript object
+            console.log(JSON.parse(xmlhttp.responseText));
             let dog_info_array = JSON.parse(xmlhttp.responseText);
             // Get the table element
             let table = document.getElementById("dog_table");
