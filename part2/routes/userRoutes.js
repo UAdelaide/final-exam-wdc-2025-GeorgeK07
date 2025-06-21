@@ -74,20 +74,11 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
-// POST log out request and destroy log in
+// POST log out request and destroy session
 router.post('/users/login', async (req, res) => {
   try {
     // Get the user
-    const [rows] = await db.query('SELECT username, password_hash, role FROM Users WHERE username = ?', [req.body.user]);
-    if (rows[0].password_hash === req.body.pass) {
-      // Set elements in request
-      req.session.username = rows[0].username;
-      req.session.password_hash = rows[0].password_hash;
-      req.session.role = rows[0].role;
-      res.json(rows[0].role);
-    } else {
-      throw new Error('Error');
-    }
+    
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
