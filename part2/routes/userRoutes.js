@@ -68,9 +68,9 @@ router.post('/users/login', async (req, res) => {
       console.log(req.session);
       res.json(rows[0].username);
       if () {
-        res.redirect();
+        res.redirect(/owner-dashboard.html);
       } else if () {
-        res.redirect();
+        res.redirect("/walker-dashboard.html);
       } else {
         console.log("This should never happen.");
       }
