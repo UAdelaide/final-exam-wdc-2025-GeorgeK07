@@ -77,7 +77,7 @@
           let user_id = await getCurrentUser();
           console.log(user_id);
           try {
-            const res = await fetch('/api/walks/2/apply', {
+            const res = await fetch('/api/walks/' + user_id + '/apply', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ walker_id: user })
