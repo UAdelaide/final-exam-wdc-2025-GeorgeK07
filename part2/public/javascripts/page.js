@@ -235,7 +235,7 @@ function loadMyDogs(){
     xmlhttp.onreadystatechange = function() {
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
-            console.log();
+            console.log(xmlhttp.responseText);
         }
     };
     // Open connection to server & GET the user data
