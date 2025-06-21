@@ -34,9 +34,9 @@ router.get('/me', async (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
   // Get the user's dogs from database
-  const [rows] = await db.query('SELECT name FROM Dogs WHERE owner_id = ?', [req.body.user]);
+  const [rows] = await db.query('SELECT name FROM Dogs WHERE owner_id = ?', [req.body.id]);
   console.log(rows);
-  res.json(rows.user);
+  res.json(rows[0].user);
 });
 
 // POST login (dummy version)
