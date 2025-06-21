@@ -241,6 +241,7 @@ function loadMyDogs(){
             let dogNames = JSON.parse(xmlhttp.responseText);
             let drop_down = document.getElementById("dog_names");
             let new_dog_name = document.createElement("option");
+            new_dog_name.text = "";
         }
     };
     // Open connection to server & GET the user data
