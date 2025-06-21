@@ -34,7 +34,7 @@ router.get('/me', async (req, res) => {
     return res.status(401).json({ error: 'Not logged in' });
   }
   // Get the user's dogs from database
-  const [rows] = await db.query('SELECT username, password_hash, role FROM Users WHERE username = ?', [req.body.user]);
+  const [rows] = await db.query('SELECT name FROM Dogs WHERE owner_id = ?', [req.body.user]);
   if () {
 
   }
