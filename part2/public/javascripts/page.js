@@ -272,4 +272,3 @@ async function getCurrentUser() {
     xmlhttp.open("GET", "/api/users/me", true);
     xmlhttp.send();
 }
-
