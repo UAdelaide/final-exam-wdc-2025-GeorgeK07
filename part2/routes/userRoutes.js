@@ -67,6 +67,11 @@ router.post('/users/login', async (req, res) => {
       req.session.role = rows[0].role;
       console.log(req.session);
       res.json(rows[0].username);
+      if () {
+
+      } el {
+
+      }
       res.redirect();
     } else {
       throw new Error('Error');
