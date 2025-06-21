@@ -69,8 +69,10 @@ router.post('/users/login', async (req, res) => {
       res.json(rows[0].username);
       if () {
 
-      } el {
+      } else if () {
 
+      } else {
+        
       }
       res.redirect();
     } else {
