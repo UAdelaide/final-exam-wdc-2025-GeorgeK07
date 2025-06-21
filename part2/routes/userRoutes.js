@@ -65,7 +65,6 @@ router.post('/users/login', async (req, res) => {
       req.session.username = rows[0].username;
       req.session.password_hash = rows[0].password_hash;
       req.session.role = rows[0].role;
-      // console.log(req.session);
       res.json(rows[0].role);
     } else {
       throw new Error('Error');
