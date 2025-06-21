@@ -28,8 +28,9 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// GET current user info
+// GET current user's name
 router.get('/me', async (req, res) => {
+  // If user session has name, 
   if (!req.session.username) {
     return res.status(401).json({ error: 'Not logged in' });
   }
