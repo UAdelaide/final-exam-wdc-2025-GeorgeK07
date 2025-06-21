@@ -30,7 +30,7 @@ router.post('/register', async (req, res) => {
 
 // GET current user's name
 router.get('/me', async (req, res) => {
-  // If user session has name, 
+  // If user session has name, send it, if not, return not logged in error
   if (!req.session.username) {
     return res.status(401).json({ error: 'Not logged in' });
   }
@@ -38,7 +38,7 @@ router.get('/me', async (req, res) => {
 });
 
 // GET current user's dog's info
-router.get('/me', async (req, res) => {
+router.get('/myDogs', async (req, res) => {
   if (!req.session.username) {
     return res.status(401).json({ error: 'Not logged in' });
   }
