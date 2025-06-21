@@ -286,8 +286,8 @@ function addDogsTable(){
         if (this.readyState === 4 && this.status === 200) {
             // Convert dog names into javascript object
             let dog_names_array = JSON.parse(xmlhttp.responseText);
-            // Get the dropdown element
-            let drop_down = document.getElementById("dog_names");
+            // Get the table element
+            let table = document.getElementById("dog_table");
             // For all dog names obtained, create a new option in the dropdown
             for (let i = 0; i < dog_names_array.length; i++) {
                 let new_dog_name = document.createElement("option");
