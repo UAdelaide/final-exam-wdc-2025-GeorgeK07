@@ -232,16 +232,15 @@ function loadMyDogs(){
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
-  // Define function that runs when ready state is changed
-  xhttp.onreadystatechange = function() {
+    // Define function that runs when ready state is changed
+    xmlhttp.onreadystatechange = function() {
     // Run code if ready state is 4 and status is 200
     if (this.readyState == 4 && this.status == 200) {
-      // Replace header level 1 text with color requested from /color.txt
-      document.getElementsByTagName("h1")[0].innerText = xhttp.responseText;
-      document.getElementsByTagName("h1")[0].style.color = xhttp.responseText;
+        // Replace header level 1 text with color requested from /color.txt
+        document.getElementsByTagName("h1")[0].innerText = xmlhttp.responseText;
+        document.getElementsByTagName("h1")[0].style.color = xmlhttp.responseText;
     }
-  };
-
+    };
     // Open connection to server & send the post data using a POST request
     xmlhttp.open("GET", "/api/users/me", true);
     xmlhttp.send();
