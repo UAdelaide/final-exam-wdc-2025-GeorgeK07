@@ -18,6 +18,11 @@
     <label for="password">Password</label>
     <input id="password" class="form-control" type="password">
     <button class="btn btn-primary" type="button" onclick="login()">Log In</button>
+                <div class="items" v-for="({ thumbnail, title, price }, index) in saleItem">
+                    <a class="item-title" :href="'/product.html?q=' + title" href="/"><img class="item-img" :src="thumbnail" src="https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png" :alt="title" alt="Clothes"></a>
+                    <a class="item-title" :href="'/product.html?q=' + title" href="/">{{ title }}</a>
+                    <p>${{ price }}</p>
+                </div>
   </div>
 
   <script>
