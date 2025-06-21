@@ -237,8 +237,9 @@ function loadMyDogs(){
     xmlhttp.onreadystatechange = function() {
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
-            console.log(xmlhttp.responseText);
+            // Convert dog names into javascript object
             let dogNames = JSON.parse(xmlhttp.responseText);
+            // Get the dropdown element
             let drop_down = document.getElementById("dog_names");
             for (let i = 0; i < dogNames.length; i++) {
                 let new_dog_name = document.createElement("option");
