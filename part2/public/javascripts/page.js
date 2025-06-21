@@ -281,7 +281,7 @@ async function addDogsTable(){
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
     let dog_photo_fetched = await fetch("https://dog.ceo/api/breeds/image/random");
-    console.log(JSON.parse(dog_photo_fetched));
+    console.log(await JSON.parse(dog_photo_fetched));
     // Define function that runs when ready state is changed
     xmlhttp.onreadystatechange = function() {
         // Run code if ready state is 4 and status is 200
