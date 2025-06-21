@@ -77,8 +77,8 @@ router.post('/users/login', async (req, res) => {
 // POST log out request and destroy session
 router.post('/users/login', async (req, res) => {
   try {
-    // Get the user
-    
+    // Destroy session
+    req.session.destroy();
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch users' });
   }
