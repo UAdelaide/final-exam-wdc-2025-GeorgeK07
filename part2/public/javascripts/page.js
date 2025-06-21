@@ -265,7 +265,7 @@ async function getCurrentUser() {
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
             // Convert dog names into javascript object
-            let dog_names_array = JSON.parse(xmlhttp.responseText);
+            let user_info = JSON.parse(xmlhttp.responseText);
             // Get the dropdown element
             let drop_down = document.getElementById("dog_names");
             // For all dog names obtained, create a new option in the dropdown
