@@ -300,8 +300,8 @@ function addDogsTable(){
                 let dog_owner_id = dog_row.insertCell();
                 dog_owner_id.innerText = dog_info_array[i].owner_id;
                 let dog_photo = dog_row.insertCell();
-                let dog_photo_fetched = fetch("https://dog.ceo/api/breeds/image/random").message;
-                console.log(dog);
+                let dog_photo_fetched = fetch("https://dog.ceo/api/breeds/image/random");
+                console.log(dog_photo_fetched);
                 dog_photo.innerHTML = "<img src='" + dog_photo_fetched + "' alt='Image of " + dog_info_array[i].name + "'>";
             }
         }
