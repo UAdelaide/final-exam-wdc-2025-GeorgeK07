@@ -190,8 +190,8 @@ function login(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             let role = JSON.parse(this.responseText);
-            if () {
-
+            if (role === "owner") {
+                location.href = 'newPage.html';
             }
             alert("Welcome " + username);
 
