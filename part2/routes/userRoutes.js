@@ -61,8 +61,8 @@ router.post('/users/login', async (req, res) => {
     // Get the user
     const [rows] = await db.query('SELECT username, password_hash, role FROM Users WHERE username = ?', [req.body.user]);
     if (rows[0].password_hash === req.body.pass) {
-      req.session.username = req.body.user;
-      req.session.username = req.body.pass;
+      req.session.username = rows[0].username;
+      req.session.username = rows[0].password_hash;
       req.session.username = req.body.role;
       console.log(req.session.variableName);
       res.json(rows);
