@@ -28,13 +28,12 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// GET current user's name
+// GET current user info
 router.get('/me', (req, res) => {
-  // If user session has name, send it, if not, return not logged in error
-  if (!req.session.username) {
+  if (!req.session.user) {
     return res.status(401).json({ error: 'Not logged in' });
   }
-  res.json(req.session.username);
+  res.json(req.session.user);
 });
 
 // GET current user's dog's info
