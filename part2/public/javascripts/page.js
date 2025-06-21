@@ -228,7 +228,7 @@ function logout(){
 /*
  * POST a request to logout to /api/users/users/logout
  */
-function logout(){
+function load(){
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
