@@ -75,8 +75,8 @@ router.post('/users/login', async (req, res) => {
       console.log(req.session.id);
       console.log(req.session.user);
       console.log(req.session.email);
-      console.log(req.session.);
-      console.log(req.session.id);
+      console.log(req.session.password_hash);
+      console.log(req.session.role);
       // Send role back to check which page to go to in login()
       res.json(rows[0].role);
     } else { // If not throw error
