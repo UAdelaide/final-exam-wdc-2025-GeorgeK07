@@ -67,9 +67,9 @@ router.post('/users/login', async (req, res) => {
       req.session.role = rows[0].role;
       console.log(req.session);
       // res.json(rows[0].username);
-      if () {
+      if (req.session.role === "owner") {
         res.redirect("/owner-dashboard.html");
-      } else if () {
+      } else if (req.session.role === "") {
         res.redirect("/walker-dashboard.html");
       } else {
         console.log("This should never happen.");
