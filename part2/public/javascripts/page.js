@@ -265,7 +265,7 @@ function getCurrentUser() {
         // Run code if ready state is 4 and status is 200
         if (this.readyState === 4 && this.status === 200) {
             // Return id of user
-            console.log();
+            console.log(xmlhttp.responseText);
             return JSON.parse(xmlhttp.responseText);
         }
     };
