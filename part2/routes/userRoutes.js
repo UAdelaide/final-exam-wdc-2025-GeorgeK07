@@ -65,10 +65,11 @@ router.post('/login', async (req, res) => {
 router.post('/users/login', async (req, res) => {
   try {
     // Get the user from database
-    const [rows] = await db.query('SELECT username, password_hash, role FROM Users WHERE username = ?', [req.body.user]);
+    const [rows] = await db.query('SELECT user_id, username, email, password_hash, role FROM Users WHERE username = ?', [req.body.user]);
     // Check if password entered and in database match
     if (rows[0].password_hash === req.body.pass) {
       // Set elements in session to data from database
+      req.session.
       req.session.user = rows[0].username;
       req.session.pass = rows[0].password_hash;
       req.session.role = rows[0].role;
