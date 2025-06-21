@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-var session = require('express-session');
+var session = require('express-session'); // Express session
 
 const app = express();
 
@@ -11,10 +11,10 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // Express session setup
 app.use(session({
-secret: 'a string of your choice',
-resave: false,
-saveUninitialized: true,
-cookie: { secure: false }
+  secret: 'a string of your choice',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
 }));
 
 // Routes
