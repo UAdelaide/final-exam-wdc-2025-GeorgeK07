@@ -233,12 +233,10 @@ function loadMyDogs(){
     var xmlhttp = new XMLHttpRequest();
     // Define function that runs when ready state is changed
     xmlhttp.onreadystatechange = function() {
-    // Run code if ready state is 4 and status is 200
-    if (this.readyState == 4 && this.status == 200) {
-        // Replace header level 1 text with color requested from /color.txt
-        document.getElementsByTagName("h1")[0].innerText = xmlhttp.responseText;
-        document.getElementsByTagName("h1")[0].style.color = xmlhttp.responseText;
-    }
+        // Run code if ready state is 4 and status is 200
+        if (this.readyState === 4 && this.status === 200) {
+            console.log();
+        }
     };
     // Open connection to server & GET the user data
     xmlhttp.open("GET", "/api/users/me", true);
