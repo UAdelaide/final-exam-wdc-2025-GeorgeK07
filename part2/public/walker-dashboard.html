@@ -60,7 +60,7 @@
             // Create AJAX Request
             var xmlhttp = new XMLHttpRequest();
             // Define function that runs when ready state is changed
-            xmlhttp.onreadystatechange = function() {
+            await xmlhttp.onreadystatechange = function() {
                 // Run code if ready state is 4 and status is 200
                 if (this.readyState === 4 && this.status === 200) {
                     // Return id of user
@@ -69,8 +69,8 @@
                 }
             };
             // Open connection to server & GET the user's id
-            await xmlhttp.open("GET", "/api/users/me", true);
-            await xmlhttp.send();
+            xmlhttp.open("GET", "/api/users/me", true);
+            xmlhttp.send();
         }
 
         async function applyToWalk() {
