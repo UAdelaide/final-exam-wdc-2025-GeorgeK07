@@ -209,6 +209,9 @@ function login(){
 
 }
 
+/*
+ * POST a request to logout to /api/users/users/logout
+ */
 function logout(){
 
     // Create AJAX Request
