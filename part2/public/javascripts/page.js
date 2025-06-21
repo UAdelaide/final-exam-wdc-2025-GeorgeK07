@@ -300,7 +300,7 @@ async function addDogsTable(){
                 let dog_owner_id = dog_row.insertCell();
                 dog_owner_id.innerText = dog_info_array[i].owner_id;
                 let dog_photo = dog_row.insertCell();
-                dog_photo.innerHTML = "<img src='" + dog_photo_fetched + "' alt='Image of " + dog_info_array[i].name + "'>";
+                dog_photo.innerHTML = "<img src='https://images.dog.ceo/breeds\/bouvier\/n02106382_2021.jpg' alt='Image of " + dog_info_array[i].name + "'>";
             }
         }
     };
